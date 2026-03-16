@@ -203,7 +203,7 @@ class ModbusCoordinator(DataUpdateCoordinator):
         try:
             # Ensure hub is connected (HA standard: UpdateFailed when offline)
             if not getattr(self.hub, "_is_connected", False):
-                now = asyncio.get_event_loop().time()
+                now = asyncio.get_running_loop().time()
                 if now >= self._next_connect_attempt:
                     self._next_connect_attempt = now + self._connect_retry_interval
                     try:
@@ -320,7 +320,7 @@ class ModbusCoordinator(DataUpdateCoordinator):
                     )
 
             # 5. Update last_update_time for each interval
-            current_time = asyncio.get_event_loop().time()
+            current_time = asyncio.get_running_loop().time()
             for register in registers_to_read:
                 interval = register.get("scan_interval", 30)
                 self._last_update_time[interval] = current_time
@@ -1879,7 +1879,7 @@ class ModbusCoordinator(DataUpdateCoordinator):
                         "raw_value": processed_value,
                         "processed_value": mapped_value,
                         "register_config": register,
-                        "timestamp": asyncio.get_event_loop().time(),
+                        "timestamp": asyncio.get_running_loop().time(),
                     }
                     if numeric_value is not None:
                         register_data["numeric_value"] = numeric_value
@@ -2057,7 +2057,7 @@ class ModbusCoordinator(DataUpdateCoordinator):
             if not self._cached_registers_by_interval:
                 return []
 
-            current_time = asyncio.get_event_loop().time()
+            current_time = asyncio.get_running_loop().time()
             registers_to_read = []
 
             # Track which intervals are being updated
