@@ -249,13 +249,13 @@ views:
           - type: history-graph
             title: Module Deviations Over Time (24h)
             entities:
-              - entity: sensor.{PREFIX}_module_1_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_1_deviation
                 name: Module 1
-              - entity: sensor.{PREFIX}_module_2_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_2_deviation
                 name: Module 2
               - entity: sensor.{PREFIX}_module_3_deviation
                 name: Module 3
-              - entity: sensor.{PREFIX}_module_4_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_4_deviation
                 name: Module 4
             hours_to_show: 24
             refresh_interval: 60
@@ -263,19 +263,19 @@ views:
           - type: history-graph
             title: Module Deviations Over Time - Modules 5-8 (24h)
             entities:
-              - entity: sensor.{PREFIX}_module_5_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_5_deviation
                 name: Module 5
-              - entity: sensor.{PREFIX}_module_6_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_6_deviation
                 name: Module 6
-              - entity: sensor.{PREFIX}_module_7_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_7_deviation
                 name: Module 7
-              - entity: sensor.{PREFIX}_module_8_deviation
+              - entity: sensor.{PREFIX}_battery_1_module_8_deviation
                 name: Module 8
             hours_to_show: 24
             refresh_interval: 60
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_1_deviation
+            entity: sensor.{PREFIX}_battery_1_module_1_deviation
             name: Module 1 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -286,7 +286,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_2_deviation
+            entity: sensor.{PREFIX}_battery_1_module_2_deviation
             name: Module 2 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -308,7 +308,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_4_deviation
+            entity: sensor.{PREFIX}_battery_1_module_4_deviation
             name: Module 4 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -319,7 +319,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_5_deviation
+            entity: sensor.{PREFIX}_battery_1_module_5_deviation
             name: Module 5 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -330,7 +330,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_6_deviation
+            entity: sensor.{PREFIX}_battery_1_module_6_deviation
             name: Module 6 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -341,7 +341,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_7_deviation
+            entity: sensor.{PREFIX}_battery_1_module_7_deviation
             name: Module 7 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -352,7 +352,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_8_deviation
+            entity: sensor.{PREFIX}_battery_1_module_8_deviation
             name: Module 8 Deviation
             icon: mdi:battery
             icon_color: blue
@@ -392,7 +392,7 @@ views:
       - title: Module Cell Voltage Ranges
         cards:
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_1_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_1_cell_voltage_range
             name: Module 1 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -403,7 +403,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_2_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_2_cell_voltage_range
             name: Module 2 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -414,7 +414,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_3_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_3_cell_voltage_range
             name: Module 3 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -425,7 +425,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_4_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_4_cell_voltage_range
             name: Module 4 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -436,7 +436,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_5_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_5_cell_voltage_range
             name: Module 5 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -447,7 +447,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_6_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_6_cell_voltage_range
             name: Module 6 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -458,7 +458,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_7_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_7_cell_voltage_range
             name: Module 7 Range
             icon: mdi:battery-charging-30
             icon_color: blue
@@ -469,7 +469,7 @@ views:
             secondary_info: name
 
           - type: custom:mushroom-entity-card
-            entity: sensor.{PREFIX}_module_8_cell_voltage_range
+            entity: sensor.{PREFIX}_battery_1_module_8_cell_voltage_range
             name: Module 8 Range
             icon: mdi:battery-charging-30
             icon_color: blue
