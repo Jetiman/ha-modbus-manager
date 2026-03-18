@@ -331,7 +331,7 @@ async def async_setup_entry(
                     )
                     registry.async_update_entity(
                         entity_id,
-                        new_config_entry_id=entry.entry_id,
+                        config_entry_id=entry.entry_id,
                     )
 
                 # device_info is already in sensor_config from coordinator

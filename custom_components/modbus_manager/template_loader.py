@@ -144,7 +144,7 @@ async def load_templates_from_dir(
     """Load templates from a specific directory."""
     templates = []
     try:
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         filenames = await loop.run_in_executor(None, os.listdir, template_dir)
 
         for filename in filenames:
@@ -193,7 +193,7 @@ async def load_templates() -> List[Dict[str, Any]]:
         if not os.path.exists(TEMPLATE_DIR):
             _LOGGER.error("Template directory %s does not exist", TEMPLATE_DIR)
         else:
-            loop = asyncio.get_event_loop()
+            loop = asyncio.get_running_loop()
             filenames = await loop.run_in_executor(None, os.listdir, TEMPLATE_DIR)
 
             for filename in filenames:
@@ -273,7 +273,7 @@ async def load_base_templates() -> Dict[str, Dict[str, Any]]:
         if _base_template_cache is not None:
             cache_valid = True
             if os.path.exists(BASE_TEMPLATE_DIR):
-                loop = asyncio.get_event_loop()
+                loop = asyncio.get_running_loop()
                 filenames = await loop.run_in_executor(
                     None, os.listdir, BASE_TEMPLATE_DIR
                 )
@@ -296,7 +296,7 @@ async def load_base_templates() -> Dict[str, Dict[str, Any]]:
             return _base_template_cache
 
         # List files in thread-safe way
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         filenames = await loop.run_in_executor(None, os.listdir, BASE_TEMPLATE_DIR)
 
         base_templates = {}
@@ -408,7 +408,7 @@ async def load_single_template(
             return _template_cache[cache_key]
 
         # Read file in thread-safe way
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         data = await loop.run_in_executor(None, _read_template_file, template_path)
 
         if not data:
@@ -1558,7 +1558,7 @@ async def get_template_by_name(template_name: str) -> Optional[Dict[str, Any]]:
 
         # 3. Check built-in templates (only if not in cache)
         if os.path.exists(TEMPLATE_DIR):
-            loop = asyncio.get_event_loop()
+            loop = asyncio.get_running_loop()
             filenames = await loop.run_in_executor(None, os.listdir, TEMPLATE_DIR)
 
             for filename in filenames:
@@ -1579,7 +1579,7 @@ async def get_template_by_name(template_name: str) -> Optional[Dict[str, Any]]:
 
         # 4. Check manufacturer mappings if not found in device templates
         if os.path.exists(MAPPING_DIR):
-            loop = asyncio.get_event_loop()
+            loop = asyncio.get_running_loop()
             mapping_files = await loop.run_in_executor(None, os.listdir, MAPPING_DIR)
             for filename in mapping_files:
                 if filename.endswith((".yaml", ".yml")):
