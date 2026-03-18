@@ -5,6 +5,36 @@ All notable changes to the HA-Modbus-Manager project will be documented in this 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-03-18
+
+### ✨ Added
+
+#### mkaiser migration support
+- **entity_ids_without_prefix**: Optional device config to create entities without prefix for history retention when migrating from mkaiser or similar integrations.
+- **add_entity_prefix service**: Service to add prefix to entity_ids after migration; Home Assistant migrates history when entities are renamed.
+- **Migration guides**: `docs/MIGRATION_mkaiser_to_modbus_manager.md` and `docs/MIGRATION_mkaiser_unique_id_comparison.md` for step-by-step migration from mkaiser Sungrow Modbus.
+
+#### Entity categorization
+- Added `entity_category` for all entity types (config, diagnostic) for better organization in Home Assistant.
+
+### 🔧 Changed
+
+#### Sungrow SBR Battery template
+- **Entity ID consistency**: Added `battery_1_` prefix to calculated sensor unique_ids (module deviation, cell voltage range) for consistency with register sensors.
+- Dashboard examples updated to new entity IDs.
+
+#### Sungrow SHx template
+- **Meter phase sensors**: Restricted meter phase voltage/current to tested setups (SH10RT + LAN). Prevents errors on configurations where these registers are not available (e.g. WiNet-S, meter_type "None").
+
+### ♻️ Refactored
+
+- **asyncio**: Replaced deprecated `asyncio.get_event_loop()` with `asyncio.get_running_loop()` in coordinator and template_loader.
+
+### 📚 Documentation
+
+- Migration guides for mkaiser → Modbus Manager with entity_id handling and history retention options.
+- Updated `docs/README_sungrow_shx_dynamic.md` with meter restriction notes.
+
 ## [1.0.1] - 2026-03-06
 
 ### 🐛 Fixed
