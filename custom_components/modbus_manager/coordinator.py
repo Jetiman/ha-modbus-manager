@@ -2016,15 +2016,16 @@ class ModbusCoordinator(DataUpdateCoordinator):
                         processed_value = float(raw_value[0]) if raw_value else 0.0
 
                 elif data_type == "string":
-                    # String conversion
-                    string_bytes = []
-                    for reg_val in raw_value:
-                        string_bytes.extend([reg_val >> 8, reg_val & 0xFF])
-                    processed_value = (
-                        bytes(string_bytes)
-                        .decode("utf-8", errors="ignore")
-                        .rstrip("\x00")
+                    # String conversion - use registers_to_bytes to respect byte_order and swap
+                    bytes_data = registers_to_bytes(
+                        raw_value,
+                        byte_order=register.get("byte_order", "big"),
+                        swap=register.get("swap", "none"),
                     )
+                    encoding = register.get("encoding", "utf-8")
+                    processed_value = bytes_data.decode(
+                        encoding, errors="ignore"
+                    ).rstrip("\x00")
 
                 else:
                     # Default: return first value for single-register types
