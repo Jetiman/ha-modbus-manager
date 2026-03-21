@@ -95,7 +95,7 @@ sensors:
     input_type: "input"
     data_type: "string"
     count: 25
-    scan_interval: 10
+    scan_interval: 15
     group: "EV_charging_status"
     icon: "mdi:ev-station"
     map:
@@ -114,7 +114,7 @@ sensors:
     address: 300
     input_type: "input"
     data_type: "uint16"
-    scan_interval: 10
+    scan_interval: 15
     group: "EV_charging_status"
     icon: "mdi:cable-data"
     map:
