@@ -138,6 +138,18 @@ sensors:
       0: "Offline"
       1: "Online"
 
+  - name: "Availability"
+    unique_id: "availability"
+    address: 1028
+    input_type: "holding"
+    data_type: "uint16"
+    scan_interval: 15
+    group: "EV_charging_status"
+    icon: "mdi:power-settings"
+    map:
+      0: "Inoperative"
+      1: "Operative"
+
   # Charging status
   - name: "Status"
     unique_id: "status"
@@ -402,8 +414,8 @@ controls:
     # Placeholder will be replaced with model-specific value from dynamic_config.max_current
     # Options: 6, 10, 16, 20, 32 A
 
-  - name: "Availability"
-    unique_id: "operative_state"
+  - name: "Set Availability"
+    unique_id: "set_operative_state"
     address: 1028
     input_type: "holding"
     data_type: "uint16"
