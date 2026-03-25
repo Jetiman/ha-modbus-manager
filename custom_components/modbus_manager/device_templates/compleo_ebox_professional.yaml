@@ -403,7 +403,7 @@ controls:
     # Options: 6, 10, 16, 20, 32 A
 
   - name: "Availability"
-    unique_id: "availability"
+    unique_id: "operative_state"
     address: 1028
     input_type: "holding"
     data_type: "uint16"
@@ -414,9 +414,7 @@ controls:
     max_value: 1
     step: 1
     type: "number"
-    map:
-      0: "Inoperative"
-      1: "Operative"
+    # 0 = Inoperative, 1 = Operative
 
   - name: "Fallback Max Current Phase 1"
     unique_id: "fallback_max_current_phase_1"
