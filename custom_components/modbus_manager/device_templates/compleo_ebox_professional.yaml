@@ -441,7 +441,7 @@ controls:
     icon: "mdi:gauge"
     min_value: 0
     max_value: "{{max_current}}"
-    step: 0.1
+    step: 1
     type: "number"
 
   - name: "Fallback Max Current Phase 2"
@@ -457,7 +457,7 @@ controls:
     icon: "mdi:gauge"
     min_value: 0
     max_value: "{{max_current}}"
-    step: 0.1
+    step: 1
     type: "number"
 
   - name: "Fallback Max Current Phase 3"
@@ -473,7 +473,7 @@ controls:
     icon: "mdi:gauge"
     min_value: 0
     max_value: "{{max_current}}"
-    step: 0.1
+    step: 1
     type: "number"
 
   - name: "Remaining Time Before Fallback"
@@ -493,108 +493,108 @@ controls:
     group: "EV_fallback_timer"
     icon: "mdi:timer"
 
-  - name: "Station Phase Setup L1"
-    unique_id: "station_phase_setup_l1"
-    address: 1025
-    input_type: "holding"
-    data_type: "uint16"
-    scan_interval: 30
-    group: "EV_phase_setup"
-    icon: "mdi:transmission-tower"
-    min_value: 1
-    max_value: 3
-    step: 1
-    type: "number"
+  #- name: "Station Phase Setup L1"
+  #  unique_id: "station_phase_setup_l1"
+  #  address: 1025
+  #  input_type: "holding"
+  #  data_type: "uint16"
+  #  scan_interval: 30
+  #  group: "EV_phase_setup"
+  #  icon: "mdi:transmission-tower"
+  #  min_value: 1
+  #  max_value: 3
+  #  step: 1
+  #  type: "number"
 
-  - name: "Station Phase Setup L2"
-    unique_id: "station_phase_setup_l2"
-    address: 1026
-    input_type: "holding"
-    data_type: "uint16"
-    scan_interval: 30
-    group: "EV_phase_setup"
-    icon: "mdi:transmission-tower"
-    min_value: 1
-    max_value: 3
-    step: 1
-    type: "number"
+ # - name: "Station Phase Setup L2"
+ #   unique_id: "station_phase_setup_l2"
+ #   address: 1026
+ #   input_type: "holding"
+ #   data_type: "uint16"
+ #   scan_interval: 30
+ #   group: "EV_phase_setup"
+ #   icon: "mdi:transmission-tower"
+ #   min_value: 1
+ #   max_value: 3
+ #   step: 1
+ #   type: "number"
 
-  - name: "Station Phase Setup L3"
-    unique_id: "station_phase_setup_l3"
-    address: 1027
-    input_type: "holding"
-    data_type: "uint16"
-    scan_interval: 30
-    group: "EV_phase_setup"
-    icon: "mdi:transmission-tower"
-    min_value: 1
-    max_value: 3
-    step: 1
-    type: "number"
+  #- name: "Station Phase Setup L3"
+  #  unique_id: "station_phase_setup_l3"
+  #  address: 1027
+  #  input_type: "holding"
+  #  data_type: "uint16"
+  #  scan_interval: 30
+  #  group: "EV_phase_setup"
+  #  icon: "mdi:transmission-tower"
+  #  min_value: 1
+  #  max_value: 3
+  #  step: 1
+  #  type: "number"
 
-  # Fallback max current settings
-  # - name: "Fallback Max Current Phase 1"
-  #   unique_id: "fallback_max_current_phase_1"
-  #   address: 1018
-  #   input_type: "holding"
-  #   data_type: "float32"
-  #   scan_interval: 10
-  #   unit_of_measurement: "A"
-  #   device_class: "current"
-  #   state_class: "measurement"
-  #   group: "EV_fallback_current_setting"
-  #   icon: "mdi:gauge"
-  #   min_value: 0
-  #   max_value: 16
-  #   step: 1
+   Fallback max current settings
+   - name: "Fallback Max Current Phase 1"
+     unique_id: "fallback_max_current_phase_1"
+     address: 1018
+     input_type: "holding"
+     data_type: "float32"
+     scan_interval: 10
+     unit_of_measurement: "A"
+     device_class: "current"
+     state_class: "measurement"
+     group: "EV_fallback_current_setting"
+     icon: "mdi:gauge"
+     min_value: 0
+     max_value: 16
+     step: 1
 
-  # - name: "Fallback Max Current Phase 2"
-  #   unique_id: "fallback_max_current_phase_2"
-  #   address: 1020
-  #   input_type: "holding"
-  #   data_type: "float32"
-  #   scan_interval: 10
-  #   unit_of_measurement: "A"
-  #   device_class: "current"
-  #   state_class: "measurement"
-  #   group: "EV_fallback_current_setting"
-  #   icon: "mdi:gauge"
-  #   min_value: 0
-  #   max_value: 16
-  #   step: 1
+   - name: "Fallback Max Current Phase 2"
+     unique_id: "fallback_max_current_phase_2"
+     address: 1020
+     input_type: "holding"
+     data_type: "float32"
+     scan_interval: 10
+     unit_of_measurement: "A"
+     device_class: "current"
+     state_class: "measurement"
+     group: "EV_fallback_current_setting"
+     icon: "mdi:gauge"
+     min_value: 0
+     max_value: 16
+     step: 1
 
-  # - name: "Fallback Max Current Phase 3"
-  #   unique_id: "fallback_max_current_phase_3"
-  #   address: 1022
-  #   input_type: "holding"
-  #   data_type: "float32"
-  #   scan_interval: 10
-  #   unit_of_measurement: "A"
-  #   device_class: "current"
-  #   state_class: "measurement"
-  #   group: "EV_fallback_current_setting"
-  #   icon: "mdi:gauge"
-  #   min_value: 0
-  #   max_value: 16
-  #   step: 1
+   - name: "Fallback Max Current Phase 3"
+     unique_id: "fallback_max_current_phase_3"
+     address: 1022
+     input_type: "holding"
+     data_type: "float32"
+     scan_interval: 10
+     unit_of_measurement: "A"
+     device_class: "current"
+     state_class: "measurement"
+     group: "EV_fallback_current_setting"
+     icon: "mdi:gauge"
+     min_value: 0
+     max_value: 16
+     step: 1
 
-  # # Fallback timer
-  # - name: "Remaining Time Before Fallback"
-  #   unique_id: "remaining_time_before_fallback"
-  #   address: 1024
-  #   input_type: "holding"
-  #   data_type: "uint16"
-  #   precision: 0
-  #   unit_of_measurement: "min"
-  #   device_class: "duration"
-  #   state_class: "measurement"
-  #   scale: 1
-  #   min_value: 0
-  #   max_value: 120
-  #   step: 1
-  #   scan_interval: 10
-  #   group: "EV_fallback_timer"
-  #   icon: "mdi:timer"
+   # Fallback timer
+   - name: "Remaining Time Before Fallback"
+     unique_id: "remaining_time_before_fallback"
+     address: 1024
+     input_type: "holding"
+     data_type: "uint16"
+     precision: 0
+     unit_of_measurement: "min"
+     device_class: "duration"
+     state_class: "measurement"
+     scale: 1
+     min_value: 60
+     max_value: 3600
+     step: 1
+     scan_interval: 10
+     group: "EV_fallback_timer"
+     icon: "mdi:timer"
 
 # Calculated
 calculated:
