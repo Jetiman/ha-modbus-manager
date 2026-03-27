@@ -358,8 +358,9 @@ sensors:
 # Controls (holding registers - read/write)
 controls:
   # Max current settings (holding registers)
-  - name: "Max Current Phase 1"
-    unique_id: "max_current_phase_1"
+  # Master current setting - wallbox syncs to other phases
+  - name: "Max Current"
+    unique_id: "max_current"
     address: 1012
     input_type: "holding"
     data_type: "float32"
@@ -369,50 +370,46 @@ controls:
     state_class: "measurement"
     group: "EV_max_current_setting"
     icon: "mdi:gauge"
-    min_value: 0
+    min_value: 6
     max_value: "{{max_current}}"
     step: 1
     type: "number"
+    # Sets phase 1, wallbox syncs to phases 2 and 3
     # Placeholder will be replaced with model-specific value from dynamic_config.max_current
     # Options: 6, 10, 16, 20, 32 A
 
-  # TODO: maybe we can remove this since the wallbox will sync current set on one phase
-  # with the other phases
-  - name: "Max Current Phase 2"
-    unique_id: "max_current_phase_2"
-    address: 1014
-    input_type: "holding"
-    data_type: "float32"
-    scan_interval: 10
-    unit_of_measurement: "A"
-    device_class: "current"
-    state_class: "measurement"
-    group: "EV_max_current_setting"
-    icon: "mdi:gauge"
-    min_value: 0
-    max_value: "{{max_current}}"
-    step: 1
-    type: "number"
-    # Placeholder will be replaced with model-specific value from dynamic_config.max_current
-    # Options: 6, 10, 16, 20, 32 A
+  # Removed individual phase controls - wallbox handles syncing
+  # - name: "Max Current Phase 2"
+  #   unique_id: "max_current_phase_2"
+  #   address: 1014
+  #   input_type: "holding"
+  #   data_type: "float32"
+  #   scan_interval: 10
+  #   unit_of_measurement: "A"
+  #   device_class: "current"
+  #   state_class: "measurement"
+  #   group: "EV_max_current_setting"
+  #   icon: "mdi:gauge"
+  #   min_value: 0
+  #   max_value: "{{max_current}}"
+  #   step: 1
+  #   type: "number"
 
-  - name: "Max Current Phase 3"
-    unique_id: "max_current_phase_3"
-    address: 1016
-    input_type: "holding"
-    data_type: "float32"
-    scan_interval: 10
-    unit_of_measurement: "A"
-    device_class: "current"
-    state_class: "measurement"
-    group: "EV_max_current_setting"
-    icon: "mdi:gauge"
-    min_value: 0
-    max_value: "{{max_current}}"
-    step: 1
-    type: "number"
-    # Placeholder will be replaced with model-specific value from dynamic_config.max_current
-    # Options: 6, 10, 16, 20, 32 A
+  # - name: "Max Current Phase 3"
+  #   unique_id: "max_current_phase_3"
+  #   address: 1016
+  #   input_type: "holding"
+  #   data_type: "float32"
+  #   scan_interval: 10
+  #   unit_of_measurement: "A"
+  #   device_class: "current"
+  #   state_class: "measurement"
+  #   group: "EV_max_current_setting"
+  #   icon: "mdi:gauge"
+  #   min_value: 0
+  #   max_value: "{{max_current}}"
+  #   step: 1
+  #   type: "number"
 
   - name: "Set Availability"
     unique_id: "set_operative_state"
